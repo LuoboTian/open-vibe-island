@@ -79,6 +79,11 @@ struct TerminalJumpService {
             aliases: ["kaku"]
         ),
         TerminalAppDescriptor(
+            displayName: "CatPaw",
+            bundleIdentifier: "com.meituan.catpaw",
+            aliases: ["catpaw"]
+        ),
+        TerminalAppDescriptor(
             displayName: "Cursor",
             bundleIdentifier: "com.todesktop.230313mzl4w4u92",
             aliases: ["cursor"]
@@ -164,7 +169,7 @@ struct TerminalJumpService {
             .map(\.bundleIdentifier)
     )
 
-    /// Bundle identifiers of VS Code family editors (VS Code, Insiders, Cursor, Windsurf, Trae).
+    /// Bundle identifiers of VS Code family editors (VS Code, Insiders, Cursor, Windsurf, Trae, CatPaw).
     private static let vscodeFamilyBundleIDs: Set<String> = [
         "com.microsoft.VSCode",
         "com.microsoft.VSCodeInsiders",
@@ -172,6 +177,7 @@ struct TerminalJumpService {
         "com.exafunction.windsurf",
         "com.trae.app",
         "cn.trae.app",
+        "com.meituan.catpaw",
     ]
 
     /// Bundle identifiers of terminal emulators that commonly host Zellij,
@@ -433,7 +439,7 @@ struct TerminalJumpService {
         return try runAppleScript(script) == "matched"
     }
 
-    // MARK: - VS Code family (VS Code, Insiders, Cursor, Windsurf, Trae)
+    // MARK: - VS Code family (VS Code, Insiders, Cursor, Windsurf, Trae, CatPaw)
 
     /// Maps bundle identifiers to the CLI command used to open a workspace.
     private static let vscodeFamilyCLI: [String: String] = [
@@ -443,6 +449,7 @@ struct TerminalJumpService {
         "com.exafunction.windsurf": "windsurf",
         "com.trae.app": "trae",
         "cn.trae.app": "trae",
+        "com.meituan.catpaw": "catpaw",
     ]
 
     private func jumpToVSCodeFamilyWorkspace(_ workspacePath: String, bundleIdentifier: String) -> Bool {
