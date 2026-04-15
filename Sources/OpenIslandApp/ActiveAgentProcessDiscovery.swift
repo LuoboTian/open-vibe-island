@@ -355,6 +355,9 @@ struct ActiveAgentProcessDiscovery {
         if lowered.contains("/cursor.app/") {
             return "Cursor"
         }
+        if lowered.contains("/catpaw.app/") {
+            return "CatPaw"
+        }
         if lowered.contains("/windsurf.app/") {
             return "Windsurf"
         }

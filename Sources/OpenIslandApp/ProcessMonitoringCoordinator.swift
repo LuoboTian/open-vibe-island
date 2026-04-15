@@ -808,6 +808,8 @@ final class ProcessMonitoringCoordinator {
             return "VS Code Insiders"
         case "cursor":
             return "Cursor"
+        case "catpaw":
+            return "CatPaw"
         case "windsurf":
             return "Windsurf"
         case "trae":
